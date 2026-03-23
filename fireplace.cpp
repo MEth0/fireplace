@@ -150,7 +150,10 @@ void wolfram(int* world, const int rule){
     int* next = new int[WIDTH];
     int current;
     for(int i = 0; i < WIDTH; i++){
-        l = world[(i-1)%WIDTH];
+        if (i > 0)
+            l = world[(i-1)%WIDTH];
+        else
+            l = 0;
         c = world[i];
         r = world[(i+1)%WIDTH];
         current = (l<<2) | (c<<1) | r;
@@ -227,8 +230,8 @@ void printhelp(char progname[]){
 
 int main(int argc, char** argv){
     srand(time(NULL));
-    framerate = 1000 / 20;
-    maxtemp = 10;
+    framerate = 60;
+    maxtemp = 14;
     dispch = '@';
     
     int c;
