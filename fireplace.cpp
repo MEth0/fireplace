@@ -230,8 +230,8 @@ void printhelp(char progname[]){
 
 int main(int argc, char** argv){
     srand(time(NULL));
-    framerate = 1000 / 20;
-    maxtemp = 10;
+    framerate = 60;
+    maxtemp = 14;
     dispch = '@';
     
     int c;
